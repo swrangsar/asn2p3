@@ -109,8 +109,14 @@ void assembleSplayTree(splayTree* tree, splayTree* leftTree, splayTree* rightTre
 	}		
 	tree->root->left = leftTree->root;
 	tree->root->right = rightTree->root;
-	leftTree = NULL;
-	rightTree = NULL;
+	if (leftTree) {
+		free(leftTree);
+		leftTree = NULL;
+	}
+	if (rightTree) {
+		free(rightTree);
+		rightTree = NULL;
+	}		
 }
 
 void splay(splayTree* tree, int key)
@@ -213,6 +219,14 @@ void delete(splayTree* tree, int key)
 			tree->root = rightTree->root;	
 		}
 		printf("The key %d was successfully deleted.", key);
+		if (leftTree) {
+			free(leftTree);
+			leftTree = NULL;
+		}
+		if (rightTree) {
+			free(rightTree);
+			rightTree = NULL;
+		}		
 		return;
 	} else {
 		printf("Could not find the key %d to delete.\n", key);
