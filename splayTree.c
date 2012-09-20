@@ -201,18 +201,18 @@ void delete(splayTree* tree, int key)
 		splayTree* rightTree = createSplayTree();
 		leftTree->root = tree->root->left;
 		rightTree->root = tree->root->right;
-		printf("The key %d was successfully deleted.", key);
 		if (getMaximumSplayNodeKey(leftTree->root) != EMPTYNODEKEY) {
 			splay(leftTree, getMaximumSplayNodeKey(leftTree->root));	
 		}			
 		if (leftTree->root) {
 			destroySplayNode(tree->root);
-			leftTree->root->left = rightTree->root;
+			leftTree->root->right = rightTree->root;
 			tree->root = leftTree->root;
 		} else {
 			destroySplayNode(tree->root);
 			tree->root = rightTree->root;	
 		}
+		printf("The key %d was successfully deleted.", key);
 		return;
 	} else {
 		printf("Could not find the key %d to delete.\n", key);
