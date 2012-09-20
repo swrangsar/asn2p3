@@ -5,7 +5,7 @@
 splayNode* createSplayNode()
 {
 	splayNode* node = malloc(sizeof(splayNode));
-	node->key = 0;
+	node->key = EMPTYNODEKEY;
 	node->data = NULL;
 	node->left = NULL;
 	node->right = NULL;
