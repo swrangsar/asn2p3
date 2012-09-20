@@ -189,7 +189,9 @@ void insert(splayTree* tree, int key)
 int getMaximumSplayNodeKey(splayNode* node)
 {
 	if (!node) {
-		printf("Can't get maximum key because node is null.\n");
+		/*
+		 * printf("Can't get maximum key because node is null.\n");
+		 */
 		return EMPTYNODEKEY;
 	}
 	if (node->right) {
