@@ -293,5 +293,7 @@ void destroySplayTree(splayTree* tree)
 {
 	if (tree) {
 		destroySplayNodeRecursive(tree->root);
+		free(tree);
+		tree = NULL;
 	}	
 }
