@@ -1,7 +1,7 @@
 #ifndef _splayTree_h
 #define _splayTree_h
 
-#define EMPTYNODEKEY 0  /* the key which identifies a temporary empty Node */
+#define EMPTYNODEKEY 0  /* the key which identifies a temporary empty node */
 
 typedef struct splayNode {
 	int key;
